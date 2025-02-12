@@ -10,7 +10,7 @@ export default function AdminBar() {
     const notReadyPercentage = (13 / totalRooms) * 100;
 
     return (
-        <div className='flex flex-col justify-between h-[90%]'>
+        <div className='flex flex-col gap-4 justify-between h-[90%]'>
             <div>
                 <div className='flex flex-row items-center justify-between'>
                     <h1>Room Availability</h1>

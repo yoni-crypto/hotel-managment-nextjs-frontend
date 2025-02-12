@@ -9,10 +9,10 @@ const ReservationTable = () => {
                 <thead className='bg-[#f4f3ff]'>
                     <tr>
                     <th className='text-left p-3 text-sm ' >Guest</th>
-                    <th className='text-left p-3 text-sm'>Room</th>
-                    <th className='text-left p-3 text-sm'>Request</th>
-                    <th className='text-left p-3 text-sm'>Duration</th>
-                    <th className='text-left p-3 text-sm'>Check-In/Out</th>
+                    <th className='hidden lg:table-cell text-left p-3 text-sm'>Room</th>
+                    <th className='hidden md:table-cell text-left p-3 text-sm'>Request</th>
+                    <th className='hidden xl:table-cell text-left p-3 text-sm'>Duration</th>
+                    <th className='hidden lg:table-cell text-left p-3 text-sm'>Check-In/Out</th>
                     <th className='text-left p-3 text-sm'>Status</th>
                     <th className='text-left p-3 text-sm' colSpan={2}>Action</th>
                     </tr>
@@ -27,10 +27,10 @@ const ReservationTable = () => {
                                 <span className='text-xs text-gray-500'>{reservation.reservation_id}</span>
                             </div>
                         </td>
-                        <td className='p-2 text-sm text-gray-600'>{reservation.room} </td>
-                        <td className='p-2 text-sm text-gray-600'>{reservation.request}</td>
-                        <td className='p-2 text-sm text-gray-600'>{reservation.duration}</td>
-                        <td className='p-2 text-sm text-gray-600'>{reservation.check_in} - {reservation.check_out}</td>
+                        <td className='hidden lg:table-cell p-2 text-sm text-gray-600'>{reservation.room} </td>
+                        <td className='hidden md:table-cell p-2 text-sm text-gray-600'>{reservation.request}</td>
+                        <td className='hidden xl:table-cell p-2 text-sm text-gray-600'>{reservation.duration}</td>
+                        <td className='hidden lg:table-cell p-2 text-sm text-gray-600'>{reservation.check_in} - {reservation.check_out}</td>
                         <td className='p-2 text-sm text-gray-600'><span className={reservation.status === "Confirmed" ? 'bg-green-500 text-white px-2 rounded-md p-1' : "bg-blue-500 text-white px-2 p-1 rounded-md"}>{reservation.status}</span></td>
                         <td className='p-2 text-sm text-gray-600 flex flex-row items-center justify-start gap-4'>
                             <Image src="/view.png" alt='' width={20} height={20} className='cursor-pointer'/>

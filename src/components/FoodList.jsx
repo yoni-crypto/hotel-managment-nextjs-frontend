@@ -9,9 +9,9 @@ const FoodList = () => {
     const [orderType, setOrderType] = useState('Active')
 
     return (
-        <div className='w-full flex flex-row items-center gap-4 '>
-            <div className='w-[65%] bg-white rounded-2xl p-4'>
-                <div className='flex flex-row gap-2 justify-between '>
+        <div className='w-full flex flex-col xl:flex-row items-center gap-4 '>
+            <div className='w-full xl:w-[65%] bg-white rounded-2xl p-4'>
+                <div className='flex flex-row gap-2 justify-between overflow-scroll customscrollbar'>
                     <div onClick={() => setActiveCategory('All')} className={activeCategory === "All" ? '  border-2 cursor-pointer p-2 px-4 border-blue-500 rounded-lg flex flex-col gap-2 items-center justify-center' : ' border-2 cursor-pointer border-gray-100 p-2 px-4  rounded-lg flex flex-col gap-2 items-center justify-center'}>
                         <Image src="/allcat.png" alt='' width={20} height={20} />
                         <span className='text-sm font-medium'>All</span>
@@ -53,8 +53,8 @@ const FoodList = () => {
                         <span className='text-sm font-medium'>ViewList</span>
                     </div>
                 </div>
-                <div className='mt-6 bg-white h-[620px] overflow-y-scroll custom-scrollbar'>
-                    <div className='grid grid-cols-3 items-center justify-between   '>
+                <div className=' bg-white h-[620px] overflow-y-scroll custom-scrollbar'>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center justify-between   '>
                         {foods.map((food, index) => (
                             <div key={index} className='bg-[#f4f3ff] m-4 p-4 rounded-lg w-200 flex flex-col gap-3'>
                                 <div className='w-full h-[150px] bg-white '>
@@ -79,7 +79,7 @@ const FoodList = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-[35%] bg-white rounded-2xl p-4 '>
+            <div className='w-full xl:w-[35%] bg-white rounded-2xl p-4 '>
                 <h1 className='text-lg font-semibold'>Orders</h1>
                 <div className='flex flex-row items-center gap-4 mt-4'>
                     <button onClick={() => setOrderType('Active')} className={orderType === "Active" ? "bg-[#2563eb] text-white p-2 rounded-lg text-sm" : " text-sm p-2 border border-[#2563eb] text-[#2563eb] rounded-lg"}>Active</button>

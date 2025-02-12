@@ -18,7 +18,7 @@ const MessagePage = () => {
         </div>
       </div>
       <div className='w-full mt-4 flex flex-row gap-4'>
-        <div className='w-[30%] bg-white rounded-xl p-4 h-[750px] overflow-y-scroll custom-scrollbar'>
+        <div className='w-full md:w-[45%] lg:w-[40%] xl:w-[30%] bg-white rounded-xl p-4 h-[750px] overflow-y-scroll custom-scrollbar'>
           <div className='w-full'>
             {messages.map((message, index) => (
               <div key={index} onClick={() => setSelectedChat(messages[index])} className={selectedChat.id === message.id ? 'flex flex-row items-center gap-4 w-full bg-blue-50 hover:bg-blue-50 cursor-pointer mb-2 p-2 rounded-lg' : 'flex flex-row items-center gap-4 w-full hover:bg-blue-50 cursor-pointer mb-2 p-2 rounded-lg'}>
@@ -29,7 +29,7 @@ const MessagePage = () => {
                     <span className='text-sm text-gray-500'>{message.time}</span>
                   </div>
                   <span className='text-sm text-gray-400 flex flex-row items-center justify-between'>
-                    {message.preview.length > 50 ? message.preview.slice(0, 50) + "..." : message.preview}
+                    {message.preview.length > 40 ? message.preview.slice(0, 40) + "..." : message.preview}
                     <span>{message.unread === true ? <span className='bg-red-500 text-white text-sm rounded-full  px-2'>1</span> : ""}</span>
                   </span>
                 </div>
@@ -37,7 +37,7 @@ const MessagePage = () => {
             ))}
           </div>
         </div>
-        <div className='bg-white w-[70%] rounded-xl  h-[750px] flex flex-col'>
+        <div className='hidden bg-white md:w-[55%] lg:w-[60%] xl:w-[70%] rounded-xl  h-[750px] md:flex flex-col'>
           <div className=' flex flex-row gap-2 p-2 rounded-t-xl items-center w-full bg-blue-100 z-50'>
             <Image src={selectedChat.avatar} alt='' width={100} height={100} className='h-10 w-10 rounded-full' />
             <div className='flex flex-col gap-1 '>

@@ -13,7 +13,7 @@ const RoomList = () => {
     },[selectedRoom])
     return (
         <div className='bg-white rounded-xl p-4 w-full flex flex-row items-center gap-4'>
-            <div   className='w-[55%] h-[720px] overflow-y-scroll custom-scrollbar p-2'>
+            <div   className='w-full xl:w-[55%] h-[720px] overflow-y-scroll custom-scrollbar p-2'>
                 {rooms.map((room, index) => (
                     <div key={index} onClick={()=>setSelectedRoom(room)}   className={`cursor-pointer active:border-green-500 even:bg-[#f4f3ff] border border-gray-200 mb-2 rounded-2xl p-2 flex flex-row justify-start gap-6 ${
                         selectedRoom.name === room.name ? "border-green-500 border-2" : ""
@@ -57,7 +57,7 @@ const RoomList = () => {
 
                 ))}
             </div>
-            <div className='w-[45%] bg-[#f3f3f3] p-4 h-[720px] overflow-y-scroll custom-scrollbar rounded-2xl '>
+            <div className='hidden xl:block w-[45%] bg-[#f3f3f3] p-4 h-[720px] overflow-y-scroll custom-scrollbar rounded-2xl '>
                 <div className='flex flex-row items-center justify-between'>
                     <span className='text-gray-700 font-semibold text-lg'>Room Detail</span>
                     <button className='bg-[#2563eb] p-2 px-4 text-white rounded-lg'>Edit</button>
